@@ -21,5 +21,29 @@ services:
             - '../src/Kernel.php'
             - '../src/Tests/'
 
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+#    Sonata\Doctrine\Adapter\AdapterChain: ~
+#
+#    sonata.doctrine.model.adapter.chain:
+#        alias: 'Sonata\Doctrine\Adapter\AdapterChain'
+#
+#    Sonata\MediaBundle\Admin\ORM\MediaAdmin:
+#        arguments:
+#            $code: ''
+#            $class: '%sonata.media.admin.media.entity%'
+#            $baseControllerName: 'sonata.media.controller.media.admin'
+#        tags:
+#            - { name: sonata.admin, manager_type: orm, group: admin, label: Media }
+#
+#    sonata.media.admin.media:
+#        alias: 'Sonata\MediaBundle\Admin\ORM\MediaAdmin'
+#
+#    Sonata\MediaBundle\Admin\GalleryAdmin:
+#        arguments:
+#            $code: ''
+#            $class: '%sonata.media.admin.gallery.entity%'
+#            $baseControllerName: 'sonata.media.controller.gallery.admin'
+#        tags:
+#            - { name: sonata.admin, manager_type: orm, group: admin, label: Gallery }
+#
+#    sonata.media.admin.gallery:
+#        alias: 'Sonata\MediaBundle\Admin\GalleryAdmin'
