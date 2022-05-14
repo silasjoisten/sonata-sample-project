@@ -3,7 +3,7 @@ sonata_multi_upload:
         - sonata.media.provider.image
         - sonata.media.provider.file
 
-    redirect_to: 'sonata_admin_dashboard'
+    redirect_to: 'admin_app_sonatamediamedia_create_gallery'
 
 sonata_admin:
     assets:

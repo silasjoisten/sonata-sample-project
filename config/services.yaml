@@ -3,9 +3,6 @@
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
-parameters:
-    sonata.media.admin.media.controller: 'SilasJoisten\Sonata\MultiUploadBundle\Controller\MultiUploadController'
-
 services:
     # default configuration for services in *this* file
     _defaults:
@@ -22,29 +19,20 @@ services:
             - '../src/Kernel.php'
             - '../src/Tests/'
 
-#    Sonata\Doctrine\Adapter\AdapterChain: ~
-#
-#    sonata.doctrine.model.adapter.chain:
-#        alias: 'Sonata\Doctrine\Adapter\AdapterChain'
-#
-#    Sonata\MediaBundle\Admin\ORM\MediaAdmin:
-#        arguments:
-#            $code: ''
-#            $class: '%sonata.media.admin.media.entity%'
-#            $baseControllerName: 'sonata.media.controller.media.admin'
-#        tags:
-#            - { name: sonata.admin, manager_type: orm, group: admin, label: Media }
-#
-#    sonata.media.admin.media:
-#        alias: 'Sonata\MediaBundle\Admin\ORM\MediaAdmin'
-#
-#    Sonata\MediaBundle\Admin\GalleryAdmin:
-#        arguments:
-#            $code: ''
-#            $class: '%sonata.media.admin.gallery.entity%'
-#            $baseControllerName: 'sonata.media.controller.gallery.admin'
-#        tags:
-#            - { name: sonata.admin, manager_type: orm, group: admin, label: Gallery }
-#
-#    sonata.media.admin.gallery:
-#        alias: 'Sonata\MediaBundle\Admin\GalleryAdmin'
+    App\Controller\:
+        resource: '../src/Controller/'
+        tags: ['controller.service_arguments']
+
+    App\Admin\Extension\MediaAddRouteExtension:
+        tags:
+            - { name: sonata.admin.extension, target: sonata.media.admin.media }
+
+    Sonata\MediaBundle\Entity\MediaManager:
+        alias: sonata.media.manager.media
+
+    Sonata\MediaBundle\Entity\GalleryManager:
+        alias: sonata.media.manager.gallery
+
+    Sonata\MediaBundle\Admin\GalleryAdmin:
+        alias: sonata.media.admin.gallery
+
