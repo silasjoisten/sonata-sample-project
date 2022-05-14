@@ -12,8 +12,7 @@ sonata_admin:
                 items:
                     - route: sonata_admin_dashboard
                       label: Dashboard
-
-                    - Sonata\MediaBundle\Admin\ORM\MediaAdmin
+                    - sonata.media.admin.media
 
 sonata_block:
     blocks:

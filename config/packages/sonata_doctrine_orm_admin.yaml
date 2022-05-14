@@ -1,0 +1,6 @@
+sonata_doctrine_orm_admin:
+  # default value is null, so doctrine uses the value defined in the configuration
+  entity_manager: ~
+
+  audit:
+    force: false

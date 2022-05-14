@@ -1,0 +1,14 @@
+sonata_multi_upload:
+    providers:
+        - sonata.media.provider.image
+        - sonata.media.provider.file
+
+    redirect_to: 'sonata_admin_dashboard'
+
+sonata_admin:
+    assets:
+        extra_stylesheets:
+            - bundles/sonatamultiupload/dist/sonata-multiupload.css
+
+        extra_javascripts:
+            - bundles/sonatamultiupload/dist/sonata-multiupload.js
