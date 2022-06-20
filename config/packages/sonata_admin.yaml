@@ -3,16 +3,6 @@ sonata_admin:
     dashboard:
         blocks:
             - { type: sonata.admin.block.admin_list, position: left }
-        groups:
-            sonata.admin.group.dashboard:
-#                on_top: true
-                label: 'Dashboard'
-                label_catalogue: messages
-                icon: '<i class="fa fa-dashboard"></i>'
-                items:
-                    - route: sonata_admin_dashboard
-                      label: Dashboard
-                    - sonata.media.admin.media
 
 sonata_block:
     blocks:
