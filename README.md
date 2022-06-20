@@ -8,6 +8,7 @@
 ### Installation
 1. `symfony composer install`
 2. `docker-compose up -d`
+3. `symfony console doctrine:schema:create`   
 3. `symfony serve`
 
 The project URL is shown by executing the previous command `symfony serve`.
